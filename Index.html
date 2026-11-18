@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Dafne ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffdde8, #fff0f5, #f8c8dc);
+    color: #71364d;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 65px 20px 30px;
+}
+
+h1 {
+    font-size: 42px;
+    color: #c04470;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #c04470;
+}
+
+.subtitle {
+    font-size: 18px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.85);
+    padding: 30px 23px;
+    border-radius: 22px;
+    margin: 25px 0;
+    box-shadow: 0 8px 25px rgba(150,60,90,0.12);
+    line-height: 1.8;
+}
+
+.heart {
+    font-size: 55px;
+    animation: latido 1.2s infinite;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+button {
+    background: #d65380;
+    border: none;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background: #b83c68;
+}
+
+#mensaje {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 30px;
+    color: #a44b6b;
+}
+
+.corazon {
+    position: fixed;
+    bottom: -30px;
+    animation: subir 6s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="heart">❤️</div>
+    <h1>Para mi querida Dafne</h1>
+    <p class="subtitle">Una pequeña página para alguien muy especial.</p>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>18 de agosto de 2026</h2>
+        <p>
+        A las 5:03 de la tarde comenzó una historia
+        que hoy significa muchísimo para mí.
+        </p>
+        <h2>¡Nuestros 3 meses! 💗</h2>
+        <p>
+        Tres meses de recuerdos, sonrisas, ocurrencias
+        y momentos que quiero seguir compartiendo contigo.
+        </p>
+    </section>
+
+    <section class="card">
+        <h2>Lo que siento por ti 💌</h2>
+
+        <p>
+        Dafne, quiero que sepas lo feliz que soy
+        a tu lado. Tal vez no siempre encuentre las
+        palabras perfectas para expresar lo que siento,
+        pero quiero demostrarte cada día cuánto te amo.
+        </p>
+
+        <p>
+        Valoro muchísimo tu forma de ser, tus detalles,
+        tu cariño y hasta esas pequeñas tonterías que
+        terminan sacándome una sonrisa.
+        </p>
+
+        <p>
+        Gracias por permitirme formar parte de tu vida.
+        Quiero seguir aprendiendo contigo, apoyándote,
+        respetándote y construyendo recuerdos que
+        podamos guardar con mucho cariño.
+        </p>
+
+        <p>
+        No puedo esperar por vivir muchas más historias
+        contigo. Esto es apenas el comienzo de algo
+        que espero seguir cuidando con todo mi corazón.
+        </p>
+
+        <h2>Te amo muchísimo, Dafne. ❤️</h2>
+    </section>
+
+    <section class="card">
+        <h2>Un pequeño secreto... 💗</h2>
+
+        <p>
+        Hay algo que quiero recordarte siempre:
+        eres una persona muy valiosa para mí.
+        </p>
+
+        <button onclick="mostrarMensaje()">
+            Abrir mi pequeño mensaje ❤️
+        </button>
+
+        <div id="mensaje">
+            <h2>Con cariño, Jhordan</h2>
+            <p>
+            Si pudiera volver al día en que comenzó
+            nuestra historia, volvería a elegir
+            conocerte y compartir estos momentos contigo.
+            </p>
+            <p>
+            Gracias por estos tres meses tan especiales.
+            ¡Por muchísimas historias más! 💕
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    Hecho con mucho amor por Jhordan ❤️
+    <p>18/08/2026 - Nuestra historia continúa...</p>
+</footer>
+
+<script>
+function mostrarMensaje() {
+    const mensaje = document.getElementById("mensaje");
+
+    mensaje.style.display =
+        mensaje.style.display === "block" ? "none" : "block";
+}
+
+// Corazones flotantes
+function crearCorazon() {
+    const corazon = document.createElement("div");
+
+    corazon.className = "corazon";
+    corazon.textContent = "❤️";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize = (15 + Math.random() * 20) + "px";
+    corazon.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(corazon);
+
+    setTimeout(() => corazon.remove(), 8000);
+}
+
+setInterval(crearCorazon, 700);
+</script>
+
+</body>
+</html>
