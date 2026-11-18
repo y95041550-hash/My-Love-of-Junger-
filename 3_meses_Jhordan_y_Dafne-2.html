@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f4">
+<title>3 meses contigo | Jhordan & Dafne</title>
+<style>
+:root{--rose:#d95f83;--deep:#813c59;--paper:#fffaf9;--ink:#553b46}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:linear-gradient(135deg,#fff5f6,#fce4ec);min-height:100vh}
+main{width:min(900px,92%);margin:32px auto;padding:clamp(22px,5vw,56px);background:rgba(255,250,249,.92);border:1px solid #f4d6df;border-radius:28px;box-shadow:0 18px 55px #9e52621c;text-align:center;position:relative;overflow:hidden}
+main:before,main:after{content:"♡";position:absolute;color:#f3c6d3;font-size:100px;opacity:.45}
+main:before{top:8px;left:18px}main:after{right:18px;bottom:0}
+.eyebrow{font:600 12px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--rose)}
+h1{font-size:clamp(38px,8vw,70px);line-height:1.05;color:var(--deep);margin:18px 0}
+.names{font-size:clamp(20px,4vw,28px);color:var(--rose);margin:14px}
+.heart{font-size:44px;color:#d95f83;animation:pulse 1.7s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.date{font:14px Arial,sans-serif;color:#9a7180;margin:24px 0}
+.rule{width:70px;height:2px;background:#e7a6ba;margin:28px auto}
+.message{max-width:650px;margin:0 auto;font-size:clamp(17px,3vw,20px);line-height:1.8;text-align:left}
+.message p{margin:18px 0}
+.quote{font-style:italic;color:var(--deep);text-align:center;font-size:22px;margin:34px auto}
+button{border:0;border-radius:999px;background:var(--rose);color:white;padding:14px 24px;font-size:15px;cursor:pointer;box-shadow:0 8px 20px #d95f8333}
+button:hover{background:var(--deep)}
+#surprise{display:none;margin:22px auto 0;max-width:560px;padding:20px;border-radius:18px;background:#fff0f4;line-height:1.7}
+footer{margin-top:38px;font:12px Arial,sans-serif;color:#a78390}
+.petal{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards;z-index:5}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Un pequeño recuerdo para nosotros</div>
+  <h1>Felices 3 meses</h1>
+  <div class="heart">♥</div>
+  <div class="names">Jhordan <span style="color:#d9a0b2">+</span> Dafne</div>
+  <div class="date">18 de agosto de 2026 · 18 de noviembre de 2026</div>
+  <div class="rule"></div>
+  <section class="message">
+    <p>Mi querida Dafne:</p>
+    <p>Hoy cumplimos tres meses juntos. Puede que para algunas personas sea poco tiempo, pero para mí estos meses están llenos de momentos que quiero guardar con mucho cariño.</p>
+    <p>No sabes lo feliz que me hace tenerte en mi vida. Cada conversación, cada risa y cada pequeño momento a tu lado se convierte en un recuerdo que guardo con muchísimo cariño. Estar contigo le da una alegría especial a mis días, y me emociona pensar en todos los momentos que todavía nos esperan.</p>
+    <p>Quiero que sepas cuánto te valoro. Valoro tu forma de ser, tus detalles, tu manera de expresarte, tus ocurrencias y hasta esas pequeñas cosas que quizá tú no notas, pero que para mí te hacen única. Me importa lo que sientes, lo que piensas y todo aquello que forma parte de ti. Quiero escucharte, apoyarte y demostrarte con hechos que eres alguien muy importante para mí.</p>
+    <p>Te amo, Dafne. Y no quiero que esas palabras se queden solamente en una página bonita: quiero acompañarlas con respeto, paciencia, confianza, comprensión y cariño. No necesito que seamos perfectos; quiero que sigamos aprendiendo juntos, cuidando lo que tenemos y eligiéndonos cada día con libertad y sinceridad.</p>
+    <p>Gracias por estos tres meses, por hacerme tan feliz y por permitirme compartir esta historia contigo. Te valoro muchísimo y estoy muy emocionado por todas las historias que aún nos quedan por vivir.</p>
+  </section>
+  <div class="quote">“Soy muy feliz contigo, te valoro por quien eres y te amo por todo lo que compartimos.”</div>
+  <button onclick="showSurprise()">Pulsa aquí, Dafne ♡</button>
+  <div id="surprise">Si pudiera volver al día en que empezó todo, volvería a elegir conocerte. Y hoy, tres meses después, sigo emocionado por todo lo que nos falta vivir. — Jhordan ♥</div>
+  <footer>Hecho con cariño por Jhordan · 3 meses de nosotros</footer>
+</main>
+<script>
+function showSurprise(){
+ const box=document.getElementById('surprise');
+ box.style.display=box.style.display==='block'?'none':'block';
+ for(let i=0;i<18;i++){
+  const p=document.createElement('span');p.className='petal';p.textContent=['♥','♡','✿'][i%3];
+  p.style.left=Math.random()*100+'vw';p.style.animationDuration=(3+Math.random()*3)+'s';
+  p.style.fontSize=(14+Math.random()*18)+'px';document.body.appendChild(p);
+  setTimeout(()=>p.remove(),6500);
+ }
+}
+</script>
+</body>
+</html>
